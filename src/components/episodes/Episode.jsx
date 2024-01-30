@@ -1,5 +1,3 @@
-// src/components/EpisodeList.js
-//import React from "react";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_EPISODES } from "../graphql/getEpisodes";
 import { useState } from "react";
@@ -10,6 +8,7 @@ import {
   InputEpisode,
   Buttons,
   ButtonViewed,
+  ButtonFavorite,
 } from "./styles-episodes";
 import { Cards } from "../cards/styles-cards";
 import { EpisodesMarkWatched } from "./EpisodesMarkWatched";
@@ -100,15 +99,16 @@ export const EpisodeList = ({ page }) => {
                       ? "Desmarcar como Visto"
                       : "Marcar como Visto"}
                   </ButtonViewed>
-                  <button
-                    onClick={() => handleMarkAsFavorite(episode.id)}
+
+                  <ButtonFavorite
+                    onClick={() => handleMarkAsFavorite(episode)}
                     // eslint-disable-next-line react/no-unknown-property
                     isFavorite={isEpisodeFavorite(episode.id)}
                   >
                     {isEpisodeFavorite(episode.id)
                       ? "Desfavoritar"
-                      : "Favoritar"}
-                  </button>
+                      : "Favorite"}
+                  </ButtonFavorite>
                 </div>
 
                 <Cards className="cards">

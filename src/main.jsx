@@ -14,6 +14,7 @@ import "./index.css";
 // import { EpisodeList } from "./components/episodes/Episode.jsx";
 import { CharactersList } from "./components/characters/Characters.jsx";
 import { EpisodeList } from "./components/episodes/Episode.jsx";
+import { FavoriteEpisodes } from "../src/components/favorites/EpisodesFavorites.jsx";
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",
@@ -26,6 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" exact element={<EpisodeList />} />
         <Route path="/characters" exact element={<CharactersList />} />
+        <Route path="/favorites" exact element={<FavoriteEpisodes />} />
       </Routes>
     </Router>
   </ApolloProvider>

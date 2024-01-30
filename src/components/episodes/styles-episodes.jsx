@@ -100,3 +100,14 @@ export const ButtonViewed = styled.button`
   margin: 10px 0 10px 0;
   background-color: gray;
 `;
+
+export const ButtonFavorite = styled.button`
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 15px;
+  color: black;
+  border: 2px solid #2bd326;
+  cursor: pointer;
+  margin: 10px 0 10px 0;
+  background-color: gray;
+`;

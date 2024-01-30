@@ -9,7 +9,7 @@ export const HeaderCharacter = () => {
         <img src={Logo} alt="" />
       </LogoImg>
       <nav>
-        <Link to="/episodes">
+        <Link to="/">
           <p className="tag-nav">Episódios</p>
         </Link>
       </nav>

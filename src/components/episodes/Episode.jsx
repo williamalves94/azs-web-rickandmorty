@@ -12,34 +12,28 @@ import {
   ButtonViewed,
 } from "./styles-episodes";
 import { Cards } from "../cards/styles-cards";
+import { EpisodesMarkWatched } from "./EpisodesMarkWatched";
+import { EpisodesMarkFavorite } from "./EpisodesMarkFavorite";
 
 export const EpisodeList = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [inputEpisode, setInputEpisode] = useState("");
-  const [watchedEpisodes, setWatchedEpisodes] = useState([]);
+
+  const { isEpisodeWatched, handleMarkAsWatched } = EpisodesMarkWatched();
+  const {
+    isEpisodeFavorite,
+    handleMarkAsFavorite,
+    showFavorites,
+  } = EpisodesMarkFavorite();
 
   const { loading, error, data, fetchMore } = useQuery(GET_ALL_EPISODES, {
     variables: { page: currentPage },
   });
 
-  const handleMarkAsWatched = (episodeId) => {
-    if (isEpisodeWatched(episodeId)) {
-      setWatchedEpisodes((prevWatchedEpisodes) =>
-        prevWatchedEpisodes.filter((id) => id !== episodeId)
-      );
-    } else {
-      setWatchedEpisodes((prevWatchedEpisodes) => [
-        ...prevWatchedEpisodes,
-        episodeId,
-      ]);
-    }
-  };
-
-  const isEpisodeWatched = (episodeId) => watchedEpisodes.includes(episodeId);
-
   if (loading) return <p>Carregando...</p>;
   if (error) return <p>error</p>;
 
+  //funções para a próxima página
   const handleNextPage = () => {
     // eslint-disable-next-line no-undef
     fetchMore({
@@ -49,6 +43,7 @@ export const EpisodeList = ({ page }) => {
     }).then(() => setCurrentPage(data.episodes.info.next));
   };
 
+  //funções para a página anterior
   const handlePrevPage = () => {
     fetchMore({
       variables: {
@@ -57,9 +52,15 @@ export const EpisodeList = ({ page }) => {
     }).then(() => setCurrentPage(data.episodes.info.prev));
   };
 
+  const favoriteEpisodesData = data.episodes.results.filter((episode) =>
+    isEpisodeFavorite(episode.id)
+  );
+  //filtrando episódios digitando o nome no input
   const filteredEpisodes = data.episodes.results.filter((episode) =>
     episode.name.toLowerCase().includes(inputEpisode.toLowerCase())
   );
+
+  //const episodesToDisplay = showFavorites ? favoriteEpisodes : filteredEpisodes;
 
   return (
     <MainDiv>
@@ -75,43 +76,56 @@ export const EpisodeList = ({ page }) => {
 
       <DivEpisodes>
         <div>
-          {filteredEpisodes.map((episode) => (
-            <div key={episode.id}>
-              <div className="title-texts">
-                <p className="title">Episódios</p>
+          {(showFavorites ? favoriteEpisodesData : filteredEpisodes).map(
+            (episode) => (
+              <div key={episode.id}>
+                <div className="title-texts">
+                  <p className="title">Episódios</p>
 
-                <p className="episode-id-and-name">
-                  Episódio {episode.id}: <span>{episode.name}</span>
-                </p>
+                  <p className="episode-id-and-name">
+                    Episódio {episode.id}: <span>{episode.name}</span>
+                  </p>
 
-                <p className="air_date">Data de Estréia: {episode.air_date}</p>
-                <p className="char-total">
-                  Total de Personagens: {episode.characters.length}
-                </p>
-                <ButtonViewed
-                  onClick={() => handleMarkAsWatched(episode.id)}
-                  isWatched={isEpisodeWatched(episode.id)}
-                >
-                  {isEpisodeWatched(episode.id)
-                    ? "Desmarcar como Visto"
-                    : "Marcar como Visto"}
-                </ButtonViewed>
-              </div>
+                  <p className="air_date">
+                    Data de Estréia: {episode.air_date}
+                  </p>
+                  <p className="char-total">
+                    Total de Personagens: {episode.characters.length}
+                  </p>
+                  <ButtonViewed
+                    onClick={() => handleMarkAsWatched(episode.id)}
+                    isWatched={isEpisodeWatched(episode.id)}
+                  >
+                    {isEpisodeWatched(episode.id)
+                      ? "Desmarcar como Visto"
+                      : "Marcar como Visto"}
+                  </ButtonViewed>
+                  <button
+                    onClick={() => handleMarkAsFavorite(episode.id)}
+                    // eslint-disable-next-line react/no-unknown-property
+                    isFavorite={isEpisodeFavorite(episode.id)}
+                  >
+                    {isEpisodeFavorite(episode.id)
+                      ? "Desfavoritar"
+                      : "Favoritar"}
+                  </button>
+                </div>
 
-              <Cards className="cards">
-                {episode.characters.map((character) => (
-                  <div className="char-div" key={character.id}>
-                    <div className="char-and-text">
-                      <img className="char-image" src={character.image} />
-                      <h2 className="char-name">{character.name}</h2>
-                      <p className="char-status">{character.status}</p>
-                      <p className="char-species"> {character.species}</p>
+                <Cards className="cards">
+                  {episode.characters.map((character) => (
+                    <div className="char-div" key={character.id}>
+                      <div className="char-and-text">
+                        <img className="char-image" src={character.image} />
+                        <h2 className="char-name">{character.name}</h2>
+                        <p className="char-status">{character.status}</p>
+                        <p className="char-species"> {character.species}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </Cards>
-            </div>
-          ))}
+                  ))}
+                </Cards>
+              </div>
+            )
+          )}
         </div>
       </DivEpisodes>
       <Buttons>

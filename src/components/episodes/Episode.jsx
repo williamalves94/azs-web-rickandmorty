@@ -4,17 +4,39 @@ import { useQuery } from "@apollo/client";
 import { GET_ALL_EPISODES } from "../graphql/getEpisodes";
 import { useState } from "react";
 import { HeaderEpisode } from "../headers/headerEpisode";
-import { MainDiv, DivEpisodes, InputEpisode } from "./styles-episodes";
+import {
+  MainDiv,
+  DivEpisodes,
+  InputEpisode,
+  Buttons,
+  ButtonViewed,
+} from "./styles-episodes";
 import { Cards } from "../cards/styles-cards";
 
 export const EpisodeList = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [inputEpisode, setInputEpisode] = useState("");
+  const [watchedEpisodes, setWatchedEpisodes] = useState([]);
 
   const { loading, error, data, fetchMore } = useQuery(GET_ALL_EPISODES, {
     variables: { page: currentPage },
   });
-  console.log(data);
+
+  const handleMarkAsWatched = (episodeId) => {
+    if (isEpisodeWatched(episodeId)) {
+      setWatchedEpisodes((prevWatchedEpisodes) =>
+        prevWatchedEpisodes.filter((id) => id !== episodeId)
+      );
+    } else {
+      setWatchedEpisodes((prevWatchedEpisodes) => [
+        ...prevWatchedEpisodes,
+        episodeId,
+      ]);
+    }
+  };
+
+  const isEpisodeWatched = (episodeId) => watchedEpisodes.includes(episodeId);
+
   if (loading) return <p>Carregando...</p>;
   if (error) return <p>error</p>;
 
@@ -57,13 +79,23 @@ export const EpisodeList = ({ page }) => {
             <div key={episode.id}>
               <div className="title-texts">
                 <p className="title">Episódios</p>
+
                 <p className="episode-id-and-name">
                   Episódio {episode.id}: <span>{episode.name}</span>
                 </p>
+
                 <p className="air_date">Data de Estréia: {episode.air_date}</p>
                 <p className="char-total">
                   Total de Personagens: {episode.characters.length}
                 </p>
+                <ButtonViewed
+                  onClick={() => handleMarkAsWatched(episode.id)}
+                  isWatched={isEpisodeWatched(episode.id)}
+                >
+                  {isEpisodeWatched(episode.id)
+                    ? "Desmarcar como Visto"
+                    : "Marcar como Visto"}
+                </ButtonViewed>
               </div>
 
               <Cards className="cards">
@@ -82,12 +114,14 @@ export const EpisodeList = ({ page }) => {
           ))}
         </div>
       </DivEpisodes>
-      {data.episodes.info.prev && (
-        <button onClick={handlePrevPage}>prev</button>
-      )}
-      {data.episodes.info.next && (
-        <button onClick={handleNextPage}>next</button>
-      )}
+      <Buttons>
+        {data.episodes.info.prev && (
+          <button onClick={handlePrevPage}>Anterior</button>
+        )}
+        {data.episodes.info.next && (
+          <button onClick={handleNextPage}>Próximo</button>
+        )}
+      </Buttons>
     </MainDiv>
   );
 };

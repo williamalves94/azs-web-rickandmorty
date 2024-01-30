@@ -26,6 +26,8 @@ export const Cards = styled.div`
     font-size: 25px;
     margin-left: 10px;
     color: #2bd326;
+    font-family: "Creepster", system-ui;
+    letter-spacing: 2px;
   }
 
   .char-status {

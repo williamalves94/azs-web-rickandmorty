@@ -24,9 +24,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <ApolloProvider client={client}>
     <Router>
       <Routes>
-        <Route path="/" exact element={<App />} />
+        <Route path="/" exact element={<EpisodeList />} />
         <Route path="/characters" exact element={<CharactersList />} />
-        <Route path="/episodes" exact element={<EpisodeList />} />
       </Routes>
     </Router>
   </ApolloProvider>

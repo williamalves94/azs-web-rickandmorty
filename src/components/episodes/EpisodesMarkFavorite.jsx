@@ -1,30 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const EpisodesMarkFavorite = () => {
   const [favoriteEpisodes, setFavoriteEpisodes] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [showFavorites, setShowFavorites] = useState(false);
 
-  const isEpisodeFavorite = (episodeId) => favoriteEpisodes.includes(episodeId);
+  useEffect(() => {
+    const storeFavorites = localStorage.getItem("favoriteEpisodes");
+    if (storeFavorites) {
+      setFavoriteEpisodes(JSON.parse(storeFavorites));
+    }
+  }, []);
+
+  const isEpisodeFavorite = (episodeId) =>
+    favoriteEpisodes.some((favEpisode) => favEpisode.id === episodeId);
+
+  //const isEpisodeFavorite = (episodeId) => favoriteEpisodes.includes(episodeId);
+
   //favoritando e desfavoritando episódio
-  const handleMarkAsFavorite = (episodeId) => {
-    if (isEpisodeFavorite(episodeId)) {
+  const handleMarkAsFavorite = (episode) => {
+    if (isEpisodeFavorite(episode.id)) {
       setFavoriteEpisodes((prevFavoriteEpisodes) =>
-        prevFavoriteEpisodes.filter((id) => id !== episodeId)
+        prevFavoriteEpisodes.filter(
+          (favEpisode) => favEpisode.id !== episode.id
+        )
       );
     } else {
       setFavoriteEpisodes((prevFavoriteEpisodes) => [
         ...prevFavoriteEpisodes,
-        episodeId,
+        episode,
       ]);
     }
   };
 
+  useEffect(() => {
+    localStorage.setItem("favoriteEpisodes", JSON.stringify(favoriteEpisodes));
+  }, [favoriteEpisodes]);
+
   return {
-    favoriteEpisodes,
-    showFavorites,
+    showFavorites: showFavorites,
     handleMarkAsFavorite,
     isEpisodeFavorite,
+    favoriteEpisodesData: favoriteEpisodes,
   };
 };
 

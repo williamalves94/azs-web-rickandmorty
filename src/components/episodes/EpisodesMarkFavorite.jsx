@@ -28,7 +28,7 @@ const EpisodesMarkFavorite = () => {
     } else {
       setFavoriteEpisodes((prevFavoriteEpisodes) => [
         ...prevFavoriteEpisodes,
-        episode,
+        { ...episode, characters: episode.characters },
       ]);
     }
   };

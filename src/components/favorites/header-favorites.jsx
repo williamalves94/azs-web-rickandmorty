@@ -1,18 +1,19 @@
-import Logo from "../../assets/logo.png";
-import { Head, LogoImg, Nav } from "../headers/styles-header";
+import Logo from "../../assets/logotwo.png";
+import { HeadFav, LogoImgHead, Nav } from "./styles-favorites";
 import { Link } from "react-router-dom";
+import { handleClickLogo } from "../scrollToTop/scrollToTop";
 
 export const HeaderFavorite = () => {
   return (
-    <Head>
-      <LogoImg>
-        <img src={Logo} />
-      </LogoImg>
+    <HeadFav>
+      <LogoImgHead>
+        <img src={Logo} onClick={handleClickLogo} />
+      </LogoImgHead>
       <Nav>
         <Link to="/" className="tag-link">
           <p className="tag-nav-ep">Episódios</p>
         </Link>
       </Nav>
-    </Head>
+    </HeadFav>
   );
 };

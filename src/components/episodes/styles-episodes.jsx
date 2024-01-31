@@ -6,6 +6,40 @@ export const MainDiv = styled.div`
   border: 5px solid black;
 `;
 
+export const Home = styled.div`
+  background-color: gray;
+  height: 100%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+`;
+
+export const Title = styled.div`
+  display: flex;
+  //align-items: center;
+  position: absolute;
+  height: 100vh;
+  margin-top: 350px;
+  margin-left: 110px;
+
+  .image-title {
+    font-size: 160px;
+    color: #fff;
+    font-family: "Creepster", system-ui;
+    color: #2bd326;
+  }
+`;
+
+export const ImageEp = styled.div`
+  height: 100%;
+  img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 12px 20px 0px #00000086;
+  }
+`;
+
 export const DivEpisodes = styled.div`
   background-color: gray;
   .title {
@@ -15,8 +49,11 @@ export const DivEpisodes = styled.div`
   }
   .episode-id-and-name {
     font-size: 40px;
-    color: #fff;
-    margin-bottom: 5px;
+    color: #2bd326;
+    margin: 10px 0 5px 0;
+    font-family: "Creepster", system-ui;
+    letter-spacing: 2px;
+
     span {
       color: #2bd326;
     }
@@ -24,12 +61,12 @@ export const DivEpisodes = styled.div`
 
   .air_date {
     font-size: 18px;
-    color: black;
+    color: #2bd326;
     margin-bottom: 5px;
   }
   .char-total {
     font-size: 18px;
-    color: red;
+    color: #2bd326;
     margin: 0px 0 5px 0;
 
     //display: flex;
@@ -48,18 +85,26 @@ export const InputEpisode = styled.div`
   border: 3px solid pink;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 40px;
   color: black;
   font-size: 30px;
   font-weight: 400;
+
   input {
     width: 300px;
     height: 40px;
     outline: none;
     margin-left: 5px;
     border-radius: 3px;
-    border: 2px solid #2bd326;
+    border: 0;
+    font-size: 20px;
     padding: 5px;
+    background: gray;
+    border-bottom: 2px solid #2bd326;
+    //box-shadow: 6px 10px 15px 0px #00000086;
+    &::placeholder {
+      color: #2bd326;
+    }
   }
 `;
 
@@ -71,14 +116,17 @@ export const Buttons = styled.button`
   padding: 20px;
 
   button {
+    flex: 1 1 1;
     background-color: gray;
-    width: 150px;
-    height: 30px;
+    height: auto;
     margin: 10px;
     color: #2bd326;
+    padding: 5px 10px 5px 10px;
     cursor: pointer;
     font-family: "Creepster", system-ui;
+    font-size: 20px;
     letter-spacing: 2px;
+    text-align: center;
     box-shadow: 6px 10px 15px 0px #00000086;
     border: 2px solid #2bd326;
     border-radius: 4px;
@@ -94,20 +142,38 @@ export const ButtonViewed = styled.button`
   border-radius: 4px;
   padding: 5px;
   font-size: 15px;
-  color: black;
+  font-family: "Creepster", system-ui;
+  letter-spacing: 2px;
+  color: #2bd326;
   border: 2px solid #2bd326;
   cursor: pointer;
   margin: 10px 0 10px 0;
   background-color: gray;
+  box-shadow: 6px 10px 15px 0px #00000086;
+  &:hover {
+    background-color: #2bd326;
+    transition: all.4s;
+    color: black;
+    box-shadow: 6px 10px 15px 0px #00000086;
+  }
 `;
 
 export const ButtonFavorite = styled.button`
   border-radius: 4px;
   padding: 5px;
   font-size: 15px;
-  color: black;
+  font-family: "Creepster", system-ui;
+  letter-spacing: 2px;
+  color: #2bd326;
   border: 2px solid #2bd326;
   cursor: pointer;
-  margin: 10px 0 10px 0;
+  margin: 10px 0 20px 0;
   background-color: gray;
+  box-shadow: 6px 10px 15px 0px #00000086;
+  &:hover {
+    background-color: #2bd326;
+    transition: all.4s;
+    color: black;
+    box-shadow: 6px 10px 15px 0px #00000086;
+  }
 `;

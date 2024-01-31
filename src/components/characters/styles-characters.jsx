@@ -37,3 +37,33 @@ export const ImageChar = styled.div`
     box-shadow: 0px 12px 20px 0px #00000086;
   }
 `;
+
+export const Buttons = styled.button`
+  background-color: gray;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+
+  button {
+    flex: 1 1 1;
+    background-color: gray;
+    height: auto;
+    margin: 10px;
+    color: #2bd326;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    font-family: "Creepster", system-ui;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+    box-shadow: 6px 10px 15px 0px #00000086;
+    border: 2px solid #2bd326;
+    border-radius: 4px;
+    &:hover {
+      background-color: #2bd326;
+      transition: all.4s;
+      color: black;
+    }
+  }
+`;

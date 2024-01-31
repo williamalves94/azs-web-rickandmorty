@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_ALL_CHARACTERS } from "../graphql/getCharacters";
 import { HeaderCharacter } from "../headers/headerCharacters";
 import { Cards } from "../cards/styles-cards";
-import { MainDiv } from "./styles-characters";
+import { MainDiv, Buttons } from "./styles-characters";
 import { HomeMain } from "./Home-main";
 
 export const CharactersList = ({ page }) => {
@@ -41,17 +41,19 @@ export const CharactersList = ({ page }) => {
           </div>
         ))}
       </Cards>
-      {data.characters.info.prev && (
-        <button onClick={() => handlePageChange(data.characters.info.prev)}>
-          Prev
-        </button>
-      )}
+      <Buttons>
+        {data.characters.info.prev && (
+          <button onClick={() => handlePageChange(data.characters.info.prev)}>
+            Anterior
+          </button>
+        )}
 
-      {data.characters.info.next && (
-        <button onClick={() => handlePageChange(data.characters.info.next)}>
-          Next
-        </button>
-      )}
+        {data.characters.info.next && (
+          <button onClick={() => handlePageChange(data.characters.info.next)}>
+            Próximo
+          </button>
+        )}
+      </Buttons>
     </MainDiv>
   );
 };

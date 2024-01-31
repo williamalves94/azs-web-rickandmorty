@@ -14,6 +14,7 @@ import { Cards } from "../cards/styles-cards";
 import { EpisodesMarkWatched } from "./EpisodesMarkWatched";
 import { EpisodesMarkFavorite } from "./EpisodesMarkFavorite";
 import { HomeMain } from "./Home-Main-Ep";
+import { FooterEpisodes } from "./footer-episodes";
 
 export const EpisodeList = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -82,7 +83,7 @@ export const EpisodeList = ({ page }) => {
               <div key={episode.id}>
                 <div className="title-texts">
                   <p className="episode-id-and-name">
-                    Episódio {episode.id}: <span>{episode.name}</span>
+                    Episódio {episode.id}: {episode.name}
                   </p>
 
                   <p className="air_date">
@@ -117,8 +118,13 @@ export const EpisodeList = ({ page }) => {
                       <div className="char-and-text">
                         <img className="char-image" src={character.image} />
                         <h2 className="char-name">{character.name}</h2>
-                        <p className="char-status">{character.status}</p>
-                        <p className="char-species"> {character.species}</p>
+                        <p className="char-status">
+                          Status: {character.status}
+                        </p>
+                        <p className="char-species">
+                          {" "}
+                          Espécie: {character.species}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -136,6 +142,7 @@ export const EpisodeList = ({ page }) => {
           <button onClick={handleNextPage}>Próximo</button>
         )}
       </Buttons>
+      <FooterEpisodes />
     </MainDiv>
   );
 };

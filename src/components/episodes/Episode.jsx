@@ -13,6 +13,7 @@ import {
 import { Cards } from "../cards/styles-cards";
 import { EpisodesMarkWatched } from "./EpisodesMarkWatched";
 import { EpisodesMarkFavorite } from "./EpisodesMarkFavorite";
+import { HomeMain } from "./Home-Main-Ep";
 
 export const EpisodeList = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -64,6 +65,7 @@ export const EpisodeList = ({ page }) => {
   return (
     <MainDiv>
       <HeaderEpisode />
+      <HomeMain />
       <InputEpisode>
         <input
           type="text"
@@ -79,8 +81,6 @@ export const EpisodeList = ({ page }) => {
             (episode) => (
               <div key={episode.id}>
                 <div className="title-texts">
-                  <p className="title">Episódios</p>
-
                   <p className="episode-id-and-name">
                     Episódio {episode.id}: <span>{episode.name}</span>
                   </p>
@@ -106,8 +106,8 @@ export const EpisodeList = ({ page }) => {
                     isFavorite={isEpisodeFavorite(episode.id)}
                   >
                     {isEpisodeFavorite(episode.id)
-                      ? "Desfavoritar"
-                      : "Favorite"}
+                      ? "Desfavoritar Episódio"
+                      : "Favoritar Episódio"}
                   </ButtonFavorite>
                 </div>
 

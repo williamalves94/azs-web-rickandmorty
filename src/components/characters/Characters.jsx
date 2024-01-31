@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_CHARACTERS } from "../graphql/getCharacters";
 import { HeaderCharacter } from "../headers/headerCharacters";
 import { Cards } from "../cards/styles-cards";
 import { MainDiv, Buttons } from "./styles-characters";
 import { HomeMain } from "./Home-main";
+import { FooterCharacters } from "./footer-characters";
 
 export const CharactersList = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,7 +29,6 @@ export const CharactersList = ({ page }) => {
     <MainDiv>
       <HeaderCharacter />
       <HomeMain />
-
       <Cards>
         {data.characters.results.map((character) => (
           <div className="char-div" key={character.name}>
@@ -54,6 +54,7 @@ export const CharactersList = ({ page }) => {
           </button>
         )}
       </Buttons>
+      <FooterCharacters />
     </MainDiv>
   );
 };

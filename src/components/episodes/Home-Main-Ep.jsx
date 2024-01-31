@@ -5,7 +5,7 @@ export const HomeMain = () => {
   return (
     <Home>
       <Title>
-        <p className="image-title">Personagens</p>
+        <p className="image-title">Episódios</p>
       </Title>
       <ImageEp>
         <img src={ImageEpisodes} />

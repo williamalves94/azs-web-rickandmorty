@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Cards = styled.div`
-  border: 3px solid red;
+  //border: 3px solid red;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 50px 100px 50px 100px;
@@ -17,6 +17,7 @@ export const Cards = styled.div`
     cursor: pointer;
     border-radius: 6px;
     box-shadow: 10px 10px 15px 0px #00000086;
+    margin-bottom: 10px;
   }
   .char-image {
     //border: 3px solid blue;
@@ -28,17 +29,23 @@ export const Cards = styled.div`
     color: #2bd326;
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 2px black;
   }
 
   .char-status {
     font-size: 20px;
     color: black;
     margin: 5px 0 5px 10px;
+    font-family: "Creepster", system-ui;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px #2bd326;
   }
 
   .char-species {
     font-size: 20px;
     color: black;
-    margin: 0 0 10px 10px;
-  }
+    margin: 5px 0 5px 10px;
+    font-family: "Creepster", system-ui;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px #2bd326;
 `;

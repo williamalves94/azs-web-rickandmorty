@@ -10,6 +10,7 @@ export const Home = styled.div`
   img {
     width: 100%;
     height: auto;
+    margin-top: 140px;
   }
 `;
 
@@ -17,15 +18,16 @@ export const Title = styled.div`
   display: flex;
   //align-items: center;
   position: absolute;
-  height: 100vh;
-  margin-top: 250px;
+  height: auto;
+  //border: 2px solid #fff;
+  margin-top: 400px;
   margin-left: 120px;
 
   .image-title {
     font-size: 160px;
-    color: #fff;
     font-family: "Creepster", system-ui;
     color: #2bd326;
+    text-shadow: 8px 8px 10px black;
   }
 `;
 
@@ -38,13 +40,12 @@ export const ImageChar = styled.div`
   }
 `;
 
-export const Buttons = styled.button`
+export const Buttons = styled.div`
   background-color: gray;
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 30px;
-
   button {
     flex: 1 1 1;
     background-color: gray;
@@ -65,5 +66,25 @@ export const Buttons = styled.button`
       transition: all.4s;
       color: black;
     }
+  }
+`;
+
+export const FooterChar = styled.footer`
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid #2bd326;
+  background-color: gray;
+`;
+
+export const LogoImg = styled.header`
+  img {
+    width: 350px;
+    margin-left: 70px;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
   }
 `;

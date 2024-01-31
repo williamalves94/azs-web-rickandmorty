@@ -1,4 +1,4 @@
-import { Head, LogoImg } from "./styles-header";
+import { Head, LogoImg, Nav } from "./styles-header";
 import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
@@ -8,10 +8,14 @@ export const HeaderEpisode = () => {
       <LogoImg>
         <img src={Logo} alt="" />
       </LogoImg>
-
-      <Link to="/characters">
-        <p className="tag-nav">Personagens</p>
-      </Link>
+      <Nav>
+        <Link to="/characters" className="tag-link">
+          <p className="tag-nav-char">Personagens</p>
+        </Link>
+        <Link to="/favorites" className="tag-link">
+          <p className="tag-nav-ep">Episódios Favoritos</p>
+        </Link>
+      </Nav>
     </Head>
   );
 };

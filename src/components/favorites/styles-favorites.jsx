@@ -99,7 +99,6 @@ export const DivEpisodesFav = styled.div`
     margin: 10px 0 5px 0;
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
-
     span {
       color: #2bd326;
     }
@@ -245,6 +244,7 @@ export const FooterFav = styled.footer`
 export const LogoImg = styled.header`
   img {
     width: 350px;
+
     align-items: center;
     display: flex;
     cursor: pointer;

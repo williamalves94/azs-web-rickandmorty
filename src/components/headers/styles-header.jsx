@@ -11,7 +11,7 @@ export const Head = styled.header`
   box-shadow: 0px 12px 20px 0px #00000086;
   z-index: 999;
   position: fixed;
-  @media (max-width: 420px) {
+  @media (max-width: 700px) {
     flex-direction: column;
     align-items: center;
     display: flex;
@@ -34,7 +34,8 @@ export const LogoImg = styled.header`
       margin-left: 20px;
     }
     @media (max-width: 420px) {
-      margin-bottom: 20px;
+      margin-top: 10px;
+      margin-bottom: 5px;
     }
   }
 `;
@@ -45,10 +46,12 @@ export const Nav = styled.header`
     margin-right: 60px;
   }
   @media (max-width: 700px) {
-    margin-right: 40px;
+    margin-top: 10px;
+    margin-right: 0px;
   }
   @media (max-width: 420px) {
     margin-right: 0;
+    margin-bottom: 10px;
   }
 
   .tag-nav-char {
@@ -60,6 +63,12 @@ export const Nav = styled.header`
     text-decoration: none;
     font-size: 35px;
     text-shadow: 1px 1px 2px black;
+    @media (max-width: 1000px) {
+      font-size: 30px;
+    }
+    @media (max-width: 600px) {
+      font-size: 25px;
+    }
   }
   .tag-nav-ep {
     //border: 2px solid #fff;
@@ -69,7 +78,7 @@ export const Nav = styled.header`
     text-decoration: none;
     font-size: 35px;
     text-shadow: 1px 1px 2px black;
-    @media (max-width: 700px) {
+    @media (max-width: 1000px) {
       font-size: 30px;
     }
     @media (max-width: 600px) {

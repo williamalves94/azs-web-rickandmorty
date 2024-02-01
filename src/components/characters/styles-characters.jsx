@@ -21,13 +21,79 @@ export const Title = styled.div`
   height: auto;
   //border: 2px solid #fff;
   margin-top: 400px;
-  margin-left: 120px;
+  margin-left: 80px;
 
   .image-title {
     font-size: 160px;
     font-family: "Creepster", system-ui;
     color: #2bd326;
     text-shadow: 8px 8px 10px black;
+
+    @media (max-width: 1669px) {
+      font-size: 160px;
+      margin-top: -50px;
+    }
+    @media (max-width: 1400px) {
+      font-size: 120px;
+      margin-top: -80px;
+      margin-left: -20px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 105px;
+      margin-top: -110px;
+      margin-left: -30px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 90px;
+      margin-top: -140px;
+      margin-left: -40px;
+    }
+    @media (max-width: 900px) {
+      font-size: 80px;
+      margin-top: -152px;
+      margin-left: -45px;
+    }
+    @media (max-width: 768px) {
+      font-size: 70px;
+      margin-top: -170px;
+      margin-left: -50px;
+    }
+    @media (max-width: 630px) {
+      font-size: 55px;
+      margin-top: -180px;
+      margin-left: -55px;
+    }
+    @media (max-width: 530px) {
+      font-size: 50px;
+      margin-top: -197px;
+      margin-left: -58px;
+    }
+    @media (max-width: 480px) {
+      font-size: 40px;
+      margin-top: -200px;
+      margin-left: -60px;
+    }
+    @media (max-width: 440px) {
+      font-size: 37px;
+      margin-top: -205px;
+      margin-left: -60px;
+    }
+
+    @media (max-width: 390px) {
+      font-size: 34px;
+      margin-top: -213px;
+      margin-left: -65px;
+    }
+    @media (max-width: 370px) {
+      font-size: 32px;
+      margin-top: -216px;
+      margin-left: -64px;
+    }
+    @media (max-width: 330px) {
+      font-size: 30px;
+      margin-top: -224px;
+      margin-left: -67px;
+    }
   }
 `;
 

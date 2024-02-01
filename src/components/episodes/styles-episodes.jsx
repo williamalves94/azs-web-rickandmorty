@@ -22,15 +22,89 @@ export const Title = styled.div`
   position: absolute;
   height: auto;
   margin-top: 450px;
-  margin-left: 110px;
+  margin-left: 80px;
   //border: 2px solid #2bd326;
 
   .image-title {
     font-size: 160px;
-    color: #fff;
     font-family: "Creepster", system-ui;
     color: #2bd326;
-    text-shadow: 5px 5px 10px black;
+    text-shadow: 8px 8px 10px black;
+
+    @media (max-width: 1669px) {
+      font-size: 160px;
+      margin-top: -50px;
+    }
+    @media (max-width: 1500px) {
+      font-size: 150px;
+      margin-top: -60px;
+      margin-left: -30px;
+    }
+    @media (max-width: 1400px) {
+      font-size: 140px;
+      margin-top: -70px;
+      margin-left: -20px;
+    }
+    @media (max-width: 1300px) {
+      font-size: 120px;
+      margin-top: -80px;
+      margin-left: -20px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 110px;
+      margin-top: -100px;
+      margin-left: -30px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 100px;
+      margin-top: -110px;
+      margin-left: -40px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 90px;
+      margin-top: -135px;
+      margin-left: -40px;
+    }
+    @media (max-width: 900px) {
+      font-size: 85px;
+      margin-top: -165px;
+      margin-left: -50px;
+    }
+    @media (max-width: 740px) {
+      font-size: 70px;
+      margin-top: -185px;
+      margin-left: -50px;
+    }
+    @media (max-width: 640px) {
+      font-size: 55px;
+      margin-top: -200px;
+      margin-left: -50px;
+    }
+    @media (max-width: 540px) {
+      font-size: 50px;
+      margin-top: -220px;
+      margin-left: -60px;
+    }
+    @media (max-width: 480px) {
+      font-size: 42px;
+      margin-top: -230px;
+      margin-left: -60px;
+    }
+    @media (max-width: 420px) {
+      font-size: 38px;
+      margin-top: -240px;
+      margin-left: -65px;
+    }
+    @media (max-width: 360px) {
+      font-size: 34px;
+      margin-top: -255px;
+      margin-left: -65px;
+    }
+    @media (max-width: 320px) {
+      font-size: 28px;
+      margin-top: -260px;
+      margin-left: -65px;
+    }
   }
 `;
 

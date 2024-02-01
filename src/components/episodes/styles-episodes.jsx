@@ -131,6 +131,28 @@ export const DivEpisodes = styled.div`
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px black;
+    @media (max-width: 1100px) {
+      font-size: 40px;
+      word-wrap: break-word;
+    }
+    @media (max-width: 1000px) {
+      font-size: 35px;
+      word-wrap: break-word;
+    }
+    @media (max-width: 800px) {
+      font-size: 30px;
+      word-wrap: break-word;
+    }
+    @media (max-width: 700px) {
+      flex-direction: column;
+      font-size: 25px;
+      word-wrap: break-word;
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+      font-size: 20px;
+      word-wrap: break-word;
+    }
   }
 
   .air_date {

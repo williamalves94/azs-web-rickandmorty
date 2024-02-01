@@ -23,8 +23,8 @@ export const LogoImg = styled.header`
   img {
     width: 280px;
     margin-left: 70px;
-
     cursor: pointer;
+
     @media (max-width: 1000px) {
       width: 200px;
       margin-left: 30px;

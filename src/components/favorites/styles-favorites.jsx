@@ -16,6 +16,12 @@ export const HeadFav = styled.header`
   box-shadow: 0px 12px 20px 0px #00000086;
   z-index: 999;
   position: fixed;
+  @media (max-width: 430px) {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const LogoImgHead = styled.header`
@@ -25,11 +31,31 @@ export const LogoImgHead = styled.header`
     align-items: center;
     display: flex;
     cursor: pointer;
+    @media (max-width: 1000px) {
+      width: 200px;
+      margin-left: 30px;
+    }
+    @media (max-width: 600px) {
+      width: 180px;
+      margin-left: 20px;
+    }
+    @media (max-width: 420px) {
+      margin-bottom: 20px;
+    }
   }
 `;
 
 export const Nav = styled.header`
-  margin-right: 100px;
+  margin-right: 60px;
+  @media (max-width: 1000px) {
+    margin-right: 60px;
+  }
+  @media (max-width: 700px) {
+    margin-right: 40px;
+  }
+  @media (max-width: 420px) {
+    margin-right: 0;
+  }
   .tag-nav-char {
     //border: 2px solid #fff;
     color: #25d61f;
@@ -47,6 +73,12 @@ export const Nav = styled.header`
     text-decoration: none;
     font-size: 35px;
     text-shadow: 1px 1px 2px black;
+    @media (max-width: 700px) {
+      font-size: 30px;
+    }
+    @media (max-width: 600px) {
+      font-size: 25px;
+    }
   }
 
   .tag-link {
@@ -74,7 +106,8 @@ export const DivEpisodesFav = styled.div`
   }
 
   .title-texts p {
-    font-size: 50px;
+    font-size: 60px;
+    text-align: center;
     padding: 200px 20px 20px 20px;
     color: #2bd326;
     font-family: "Creepster", system-ui;
@@ -84,6 +117,12 @@ export const DivEpisodesFav = styled.div`
     align-items: center;
     justify-content: center;
     text-shadow: 1px 1px 2px black;
+    @media (max-width: 768px) {
+      font-size: 50px;
+    }
+    @media (max-width: 768px) {
+      font-size: 45px;
+    }
   }
 
   .div-all {
@@ -100,6 +139,27 @@ export const DivEpisodesFav = styled.div`
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px black;
+    @media (max-width: 768px) {
+      font-size: 35px;
+    }
+    @media (max-width: 768px) {
+      font-size: 30px;
+    }
+    @media (max-width: 480px) {
+      font-size: 27px;
+    }
+    @media (max-width: 400px) {
+      font-size: 25px;
+    }
+    @media (max-width: 369px) {
+      font-size: 22px;
+    }
+    @media (max-width: 337px) {
+      font-size: 20px;
+    }
+    @media (max-width: 320px) {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -112,6 +172,7 @@ export const DateAndTotalChar = styled.div`
     color: #2bd326;
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
+    margin-bottom: 5px;
   }
   .char-total {
     color: #2bd326;

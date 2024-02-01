@@ -4,7 +4,7 @@ export const Cards = styled.div`
   //border: 3px solid red;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
-  gap: 20px;
+  gap: 50px;
   padding: 5vw;
   char-div {
     display: grid;

@@ -20,7 +20,9 @@ export const FavoriteEpisodes = () => {
       <DivEpisodesFav>
         <div>
           <div className="title-texts">
-            <p>Lista de Episódios Favoritos</p>
+            <p>
+              Lista de Episódios <br></br>Favoritos
+            </p>
           </div>
           <div></div>
 

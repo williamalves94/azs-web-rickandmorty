@@ -148,7 +148,6 @@ export const FooterChar = styled.footer`
 export const LogoImg = styled.header`
   img {
     width: 350px;
-    margin-left: 70px;
     align-items: center;
     display: flex;
     cursor: pointer;

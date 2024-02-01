@@ -86,5 +86,17 @@ export const LogoImg = styled.header`
     align-items: center;
     display: flex;
     cursor: pointer;
+    @media (max-width: 800px) {
+      width: 300px;
+    }
+    @media (max-width: 600px) {
+      width: 280px;
+    }
+    @media (max-width: 500px) {
+      width: 250px;
+    }
+    @media (max-width: 400px) {
+      width: 230px;
+    }
   }
 `;

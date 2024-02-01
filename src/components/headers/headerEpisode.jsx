@@ -14,7 +14,7 @@ export const HeaderEpisode = () => {
           <a className="tag-nav-char">Personagens</a>
         </Link>
         <Link to="/favorites" className="tag-link">
-          <a className="tag-nav-ep">Episódios Favoritos</a>
+          <a className="tag-nav-ep">Favoritos</a>
         </Link>
       </Nav>
     </Head>

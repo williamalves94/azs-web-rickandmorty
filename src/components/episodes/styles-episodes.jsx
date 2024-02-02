@@ -313,3 +313,84 @@ export const LogoImg = styled.header`
     }
   }
 `;
+
+export const LoadingScreen = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  p {
+    color: #25d61f;
+    font-family: "Creepster", system-ui;
+    letter-spacing: 2px;
+    font-size: 60px;
+    @media (max-width: 600px) {
+      font-size: 45px;
+    }
+    @media (max-width: 500px) {
+      font-size: 40px;
+    }
+    @media (max-width: 480px) {
+      font-size: 36px;
+    }
+    @media (max-width: 430px) {
+      font-size: 33px;
+    }
+    @media (max-width: 400px) {
+      font-size: 29px;
+    }
+    @media (max-width: 330px) {
+      font-size: 26px;
+    }
+    @media (max-width: 300px) {
+      font-size: 24px;
+    }
+    @media (max-width: 270px) {
+      font-size: 21px;
+    }
+  }
+  img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+  }
+`;
+
+export const ErrorScreen = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  h1 {
+    color: #25d61f;
+    font-family: "Creepster", system-ui;
+    letter-spacing: 2px;
+    font-size: 200px;
+    @media (max-width: 1000px) {
+      font-size: 150px;
+    }
+    @media (max-width: 800px) {
+      font-size: 130px;
+    }
+    @media (max-width: 700px) {
+      font-size: 110px;
+    }
+    @media (max-width: 600px) {
+      font-size: 105px;
+    }
+    @media (max-width: 500px) {
+      font-size: 80px;
+    }
+    @media (max-width: 400px) {
+      font-size: 70px;
+    }
+    @media (max-width: 300px) {
+      font-size: 60px;
+    }
+  }
+`;

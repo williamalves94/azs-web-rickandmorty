@@ -263,3 +263,45 @@ export const LogoImg = styled.header`
     }
   }
 `;
+
+export const EmptyList = styled.div`
+  display: flex;
+
+  justify-content: center;
+  height: 41.2vh;
+  @media (max-width: 769px) {
+    height: 44.9vh;
+  }
+  h1 {
+    color: #2bd326;
+    font-size: 120px;
+    font-family: "Creepster", system-ui;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px black;
+    margin-top: 50px;
+    @media (max-width: 1000px) {
+      font-size: 100px;
+    }
+    @media (max-width: 800px) {
+      font-size: 90px;
+    }
+    @media (max-width: 700px) {
+      font-size: 80px;
+    }
+    @media (max-width: 600px) {
+      font-size: 75px;
+    }
+    @media (max-width: 480px) {
+      font-size: 65px;
+    }
+    @media (max-width: 400px) {
+      font-size: 55px;
+    }
+    @media (max-width: 320px) {
+      font-size: 50px;
+    }
+    @media (max-width: 300px) {
+      font-size: 45px;
+    }
+  }
+`;

@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_ALL_EPISODES } from "../graphql/getEpisodes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HeaderEpisode } from "../headers/headerEpisode";
 import {
   MainDiv,
@@ -9,16 +9,20 @@ import {
   Buttons,
   ButtonViewed,
   ButtonFavorite,
+  LoadingScreen,
+  ErrorScreen,
 } from "./styles-episodes";
 import { Cards } from "../cards/styles-cards";
 import { EpisodesMarkWatched } from "./EpisodesMarkWatched";
 import { EpisodesMarkFavorite } from "./EpisodesMarkFavorite";
 import { HomeMain } from "./Home-Main-Ep";
 import { FooterEpisodes } from "./footer-episodes";
+import LoadingImg from "../../assets/loadingimg.png";
 
 export const EpisodeList = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [inputEpisode, setInputEpisode] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const { isEpisodeWatched, handleMarkAsWatched } = EpisodesMarkWatched();
   const {
@@ -27,14 +31,37 @@ export const EpisodeList = ({ page }) => {
     showFavorites,
   } = EpisodesMarkFavorite();
 
-  const { loading, error, data, fetchMore } = useQuery(GET_ALL_EPISODES, {
-    variables: { page: currentPage },
-  });
+  const { error, data, fetchMore, loading: queryLoading } = useQuery(
+    GET_ALL_EPISODES,
+    {
+      variables: { page: currentPage },
+    }
+  );
 
-  if (loading) return <p>Carregando...</p>;
-  if (error) return <p>error</p>;
+  useEffect(() => {
+    if (queryLoading) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [queryLoading]);
 
-  //funções para a próxima página
+  if (loading) {
+    return (
+      <LoadingScreen>
+        <p>AGUARDE, CARREGANDO...</p>
+        <img src={LoadingImg} />
+      </LoadingScreen>
+    );
+  }
+
+  if (error)
+    return (
+      <ErrorScreen>
+        <h1>Error</h1>
+      </ErrorScreen>
+    );
+
   const handleNextPage = () => {
     // eslint-disable-next-line no-undef
     fetchMore({
@@ -44,7 +71,6 @@ export const EpisodeList = ({ page }) => {
     }).then(() => setCurrentPage(data.episodes.info.next));
   };
 
-  //funções para a página anterior
   const handlePrevPage = () => {
     fetchMore({
       variables: {
@@ -56,17 +82,16 @@ export const EpisodeList = ({ page }) => {
   const favoriteEpisodesData = data.episodes.results.filter((episode) =>
     isEpisodeFavorite(episode.id)
   );
-  //filtrando episódios digitando o nome no input
+
   const filteredEpisodes = data.episodes.results.filter((episode) =>
     episode.name.toLowerCase().includes(inputEpisode.toLowerCase())
   );
-
-  //const episodesToDisplay = showFavorites ? favoriteEpisodes : filteredEpisodes;
 
   return (
     <MainDiv>
       <HeaderEpisode />
       <HomeMain />
+
       <InputEpisode>
         <input
           type="text"

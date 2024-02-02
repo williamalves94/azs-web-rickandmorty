@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_CHARACTERS } from "../graphql/getCharacters";
 import { HeaderCharacter } from "../headers/headerCharacters";
@@ -6,16 +6,43 @@ import { Cards } from "../cards/styles-cards";
 import { MainDiv, Buttons } from "./styles-characters";
 import { HomeMain } from "./Home-main";
 import { FooterCharacters } from "./footer-characters";
+import { LoadingScreen, ErrorScreen } from "../episodes/styles-episodes";
+import LoadingImg from "../../assets/loadingimg.png";
 
 export const CharactersList = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
-  const { loading, error, data, fetchMore } = useQuery(GET_ALL_CHARACTERS, {
-    variables: { page: currentPage },
-  });
+  const { error, data, fetchMore, loading: queryLoading } = useQuery(
+    GET_ALL_CHARACTERS,
+    {
+      variables: { page: currentPage },
+    }
+  );
 
-  if (loading) return <p>Carregando...</p>;
-  if (error) return <p>error</p>;
+  useEffect(() => {
+    if (queryLoading) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [queryLoading]);
+
+  if (loading) {
+    return (
+      <LoadingScreen>
+        <p>AGUARDE, CARREGANDO...</p>
+        <img src={LoadingImg} />
+      </LoadingScreen>
+    );
+  }
+
+  if (error)
+    return (
+      <ErrorScreen>
+        <h1>Error</h1>
+      </ErrorScreen>
+    );
 
   const handlePageChange = (newPage) => {
     fetchMore({

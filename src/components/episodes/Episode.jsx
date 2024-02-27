@@ -120,6 +120,9 @@ export const EpisodeList = ({ page }) => {
                   <ButtonViewed
                     onClick={() => handleMarkAsWatched(episode.id)}
                     isWatched={isEpisodeWatched(episode.id)}
+                    className={`wathced-button ${
+                      isEpisodeWatched(episode.id) ? "watched" : ""
+                    }`}
                   >
                     {isEpisodeWatched(episode.id)
                       ? "Desmarcar como Visto"
@@ -130,6 +133,9 @@ export const EpisodeList = ({ page }) => {
                     onClick={() => handleMarkAsFavorite(episode)}
                     // eslint-disable-next-line react/no-unknown-property
                     isFavorite={isEpisodeFavorite(episode.id)}
+                    className={`favorite-button ${
+                      isEpisodeFavorite(episode.id) ? "favorited" : ""
+                    }`}
                   >
                     {isEpisodeFavorite(episode.id)
                       ? "Desfavoritar Episódio"

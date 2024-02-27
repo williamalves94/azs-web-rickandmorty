@@ -261,6 +261,10 @@ export const ButtonViewed = styled.button`
     color: black;
     box-shadow: 6px 10px 15px 0px #00000086;
   }
+  &.watched {
+    background-color: #2bd326;
+    color: black;
+  }
 `;
 
 export const ButtonFavorite = styled.button`
@@ -280,6 +284,10 @@ export const ButtonFavorite = styled.button`
     transition: all.4s;
     color: black;
     box-shadow: 6px 10px 15px 0px #00000086;
+  }
+  &.favorited {
+    background-color: #2bd326;
+    color: black;
   }
 `;
 

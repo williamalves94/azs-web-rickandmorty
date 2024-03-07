@@ -7,7 +7,6 @@ import { MainDiv, Buttons } from "./styles-characters";
 import { HomeMain } from "./Home-main";
 import { FooterCharacters } from "./footer-characters";
 import { LoadingScreen, ErrorScreen } from "../episodes/styles-episodes";
-import LoadingImg from "../../assets/loadingimg.png";
 
 export const CharactersList = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,7 +31,6 @@ export const CharactersList = ({ page }) => {
     return (
       <LoadingScreen>
         <p>AGUARDE, CARREGANDO...</p>
-        <img src={LoadingImg} />
       </LoadingScreen>
     );
   }

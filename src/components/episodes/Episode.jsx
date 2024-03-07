@@ -17,7 +17,6 @@ import { EpisodesMarkWatched } from "./EpisodesMarkWatched";
 import { EpisodesMarkFavorite } from "./EpisodesMarkFavorite";
 import { HomeMain } from "./Home-Main-Ep";
 import { FooterEpisodes } from "./footer-episodes";
-import LoadingImg from "../../assets/loadingimg.png";
 
 export const EpisodeList = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,7 +49,6 @@ export const EpisodeList = ({ page }) => {
     return (
       <LoadingScreen>
         <p>AGUARDE, CARREGANDO...</p>
-        <img src={LoadingImg} />
       </LoadingScreen>
     );
   }

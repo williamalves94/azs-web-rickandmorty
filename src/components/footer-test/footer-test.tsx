@@ -1,7 +1,7 @@
 import React from "react";
 
 export const testingMerge = () => {
-  return <div>testing</div>;
+  return <div>testing merge</div>;
 };
 
 export default testingMerge;

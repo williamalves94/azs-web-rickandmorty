@@ -1,7 +1,7 @@
 import React from "react";
 
-export const testing = () => {
+export const testingMerge = () => {
   return <div>testing</div>;
 };
 
-export default testing;
+export default testingMerge;

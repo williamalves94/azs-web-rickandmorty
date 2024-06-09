@@ -24,7 +24,7 @@ import { HomeMain } from "./Home-Main-Ep";
 import { FooterEpisodes } from "./footer-episodes";
 //import { CharactersListProps } from "../characters/Characters";
 //import { InfoCharacters } from "../info-characters/info-characters";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 interface EpisodesListProps {
   id: number;

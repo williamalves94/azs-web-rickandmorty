@@ -8,13 +8,13 @@ import {
   Routes,
 } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import App from "./App.jsx";
+//import App from "./App.tsx";
 import "./index.css";
-// import { CharactersList } from "./components/characters/Characters.jsx";
-// import { EpisodeList } from "./components/episodes/Episode.jsx";
-import { CharactersList } from "./components/characters/Characters.jsx";
-import { EpisodeList } from "./components/episodes/Episode.jsx";
-import { FavoriteEpisodes } from "../src/components/favorites/EpisodesFavorites.jsx";
+import { CharactersList } from "./components/characters/Characters.tsx";
+import { EpisodeList } from "./components/episodes/Episode.tsx";
+import { FavoriteEpisodes } from "../src/components/favorites/EpisodesFavorites.tsx";
+import { InfoCharacters } from "./components/info-characters/info-characters.tsx";
+//import { characterId } from "./components/info-characters/info-characters.tsx";
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",
@@ -28,6 +28,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" exact element={<EpisodeList />} />
         <Route path="/characters" exact element={<CharactersList />} />
         <Route path="/favorites" exact element={<FavoriteEpisodes />} />
+        <Route
+          path="/infocharacters/:characterId"
+          exact
+          element={<InfoCharacters />}
+        />
       </Routes>
     </Router>
   </ApolloProvider>

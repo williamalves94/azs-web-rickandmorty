@@ -25,6 +25,7 @@ import { FooterEpisodes } from "./footer-episodes";
 //import { CharactersListProps } from "../characters/Characters";
 //import { InfoCharacters } from "../info-characters/info-characters";
 //import { Link } from "react-router-dom";
+//testing merge
 
 interface EpisodesListProps {
   id: number;

@@ -12,10 +12,9 @@ export const Head = styled.header`
   z-index: 999;
   position: fixed;
   @media (max-width: 700px) {
-    flex-direction: column;
+    //justify-content: space-around;
     align-items: center;
     display: flex;
-    justify-content: center;
   }
 `;
 
@@ -28,6 +27,19 @@ export const ButtonMenu = styled.menu`
   color: #25d61f;
   cursor: pointer;
   //text-shadow: 1px 1px 2px black;
+  @media (max-width: 480px) {
+    //justify-content: space-around;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+    font-size: 45px;
+  }
+  @media (max-width: 320px) {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 40px;
+  }
 `;
 
 export const LogoImg = styled.header`
@@ -40,11 +52,20 @@ export const LogoImg = styled.header`
       width: 200px;
       margin-left: 30px;
     }
-    @media (max-width: 500px) {
+    @media (max-width: 800px) {
       width: 180px;
+      margin-left: 30px;
+    }
+    @media (max-width: 480px) {
+      width: 160px;
       margin-left: 20px;
     }
     @media (max-width: 420px) {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    @media (max-width: 320px) {
+      width: 130px;
       margin-top: 10px;
       margin-bottom: 5px;
     }

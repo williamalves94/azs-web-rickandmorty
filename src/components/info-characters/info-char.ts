@@ -6,7 +6,7 @@ export const DivInfoCharacters = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid yellow;
+  //border: 2px solid yellow;
 
   @media (max-width: 900px) {
     padding: 0 100px 0 100px;
@@ -36,6 +36,7 @@ export const DivCharacter = styled.div`
 export const ImgCharacter = styled.div`
   img {
     width: 380px;
+    height: 100%;
     border-radius: 8px 0 0 8px;
   }
 `;
@@ -57,17 +58,17 @@ export const InfoChar = styled.div`
   }
   .char-status {
     font-size: 40px;
-    color: #2bd326;
+    color: black;
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px #2bd326;
   }
   .char-specie {
     font-size: 40px;
-    color: #2bd326;
+    color: black;
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px #2bd326;
   }
 `;
 

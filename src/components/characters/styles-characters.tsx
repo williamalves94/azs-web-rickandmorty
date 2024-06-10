@@ -6,11 +6,10 @@ export const MainDiv = styled.div`
 
 export const Home = styled.div`
   background-color: gray;
-  height: 100%;
+  //height: 100%;
 
   img {
     width: 100%;
-    height: auto;
     margin-top: 140px;
   }
 `;

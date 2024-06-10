@@ -258,6 +258,9 @@ export const InputEpisode = styled.div`
   color: #2bd326;
   font-size: 30px;
   font-weight: 400;
+  @media (max-width: 480px) {
+    padding: 20px 130px 0px 130px;
+  }
 
   input {
     width: 300px;
@@ -277,6 +280,9 @@ export const InputEpisode = styled.div`
     //box-shadow: 6px 10px 15px 0px #00000086;
     &::placeholder {
       color: #2bd326;
+    }
+    @media (max-width: 480px) {
+      font-size: 15px;
     }
   }
 `;
@@ -316,6 +322,21 @@ export const ButtonsFavAndWatchDiv = styled.div`
   margin: 10px 0 10px 0;
   display: flex;
   justify-content: center;
+  @media (max-width: 480px) {
+    padding: 0px 15px 0px 15px;
+  }
+  @media (max-width: 400px) {
+    padding: 0px 40px 0px 40px;
+  }
+  @media (max-width: 390px) {
+    padding: 0px 60px 0px 60px;
+  }
+  @media (max-width: 340px) {
+    padding: 0px 90px 0px970px;
+  }
+  @media (max-width: 300px) {
+    padding: 0px 80px 0px 80px;
+  }
 `;
 
 export const ButtonViewed = styled.button`
@@ -340,6 +361,9 @@ export const ButtonViewed = styled.button`
     background-color: #2bd326;
     color: black;
   }
+  @media (max-width: 390px) {
+    font-size: 12px;
+  }
 `;
 
 export const ButtonFavorite = styled.button`
@@ -363,6 +387,9 @@ export const ButtonFavorite = styled.button`
   &.favorited {
     background-color: #2bd326;
     color: black;
+  }
+  @media (max-width: 390px) {
+    font-size: 12px;
   }
 `;
 

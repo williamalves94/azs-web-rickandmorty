@@ -27,7 +27,7 @@ export const Cards = styled.div`
     max-width: 100%;
     min-width: 100%;
     min-height: 100%;
-    height: auto;
+    height: 100%;
   }
 
   .char-name {
@@ -50,11 +50,27 @@ export const Cards = styled.div`
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(60px, 3fr));
+    grid-template-columns: repeat(auto-fit, minmax(60px, 4fr));
     padding: 50px;
   }
-  @media (max-width: 370px) {
+  @media (max-width: 600px) {
     grid-template-columns: repeat(auto-fit, minmax(60px, 3fr));
-    padding: 50px;
+    padding: 20px;
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 3fr));
+    padding: 30px;
+  }
+  @media (max-width: 470px) {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 3fr));
+    padding: 20px;
+  }
+  @media (max-width: 460px) {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 3fr));
+    padding: 22px;
+  }
+  @media (max-width: 374px) {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 3fr));
+    padding: 15px;
   }
 `;

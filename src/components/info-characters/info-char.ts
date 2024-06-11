@@ -117,8 +117,8 @@ export const InfoChar = styled.div`
     @media (max-width: 852px) {
       font-size: 25px;
     }
-    @media (max-width: 480px) {
-      font-size: 20px;
+    @media (max-width: 450px) {
+      color: blue;
     }
     @media (max-width: 430px) {
       font-size: 17px;

@@ -123,6 +123,10 @@ export const InfoChar = styled.div`
     @media (max-width: 430px) {
       font-size: 17px;
     }
+    @media (max-width: 400px) {
+      font-size: 17px;
+      color: white;
+    }
   }
 `;
 

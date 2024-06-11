@@ -259,7 +259,7 @@ export const InputEpisode = styled.div`
   font-size: 30px;
   font-weight: 400;
   @media (max-width: 480px) {
-    padding: 20px 130px 0px 130px;
+    padding: 25px 130px 0px 130px;
   }
 
   input {

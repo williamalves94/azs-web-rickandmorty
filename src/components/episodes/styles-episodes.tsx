@@ -218,7 +218,7 @@ export const DivInEpisodes = styled.div`
     padding: 25px 140px 25px 140px;
   }
   @media (max-width: 500px) {
-    padding: 25px 100px 25px 100px;
+    padding: 25px 70px 25px 70px;
   }
   @media (max-width: 420px) {
     padding: 25px 90px 25px 90px;

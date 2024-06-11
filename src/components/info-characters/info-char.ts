@@ -29,7 +29,23 @@ export const DivCharacter = styled.div`
   box-shadow: 6px 10px 15px 0px #00000086;
   border-radius: 8px;
   @media (max-width: 852px) {
+    width: 350px;
     display: block;
+  }
+  @media (max-width: 500px) {
+    width: 350px;
+  }
+  @media (max-width: 480px) {
+    width: 320px;
+    //height: 300px;
+  }
+  @media (max-width: 450px) {
+    width: 300px;
+    //height: 300px;
+  }
+  @media (max-width: 430px) {
+    width: 280px;
+    //height: 300px;
   }
 `;
 
@@ -38,6 +54,13 @@ export const ImgCharacter = styled.div`
     width: 380px;
     height: 100%;
     border-radius: 8px 0 0 8px;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+    @media (max-width: 852px) {
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+    }
   }
 `;
 
@@ -55,6 +78,15 @@ export const InfoChar = styled.div`
     @media (max-width: 900px) {
       font-size: 53px;
     }
+    @media (max-width: 852px) {
+      font-size: 30px;
+    }
+    @media (max-width: 480px) {
+      font-size: 30px;
+    }
+    @media (max-width: 430px) {
+      font-size: 25px;
+    }
   }
   .char-status {
     font-size: 40px;
@@ -62,6 +94,15 @@ export const InfoChar = styled.div`
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px #2bd326;
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+    @media (max-width: 430px) {
+      font-size: 17px;
+    }
+    @media (max-width: 852px) {
+      font-size: 25px;
+    }
   }
   .char-specie {
     font-size: 40px;
@@ -69,6 +110,15 @@ export const InfoChar = styled.div`
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px #2bd326;
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+    @media (max-width: 430px) {
+      font-size: 17px;
+    }
+    @media (max-width: 852px) {
+      font-size: 25px;
+    }
   }
 `;
 

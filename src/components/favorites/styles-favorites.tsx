@@ -170,12 +170,57 @@ export const DivEpisodes = styled.div`
     align-items: center;
     justify-content: center;
     text-shadow: 1px 1px 2px black;
+    @media (max-width: 1000px) {
+      font-size: 40px;
+    }
+    @media (max-width: 800px) {
+      font-size: 35px;
+    }
+    @media (max-width: 480px) {
+      font-size: 30px;
+    }
+    @media (max-width: 450px) {
+      font-size: 25px;
+    }
+    @media (max-width: 400px) {
+      font-size: 22px;
+    }
   }
 `;
 
 export const DivInEpisodes = styled.div`
   //border: 2px solid #fff;
   padding: 20px 300px 10px 300px;
+  @media (max-width: 1000px) {
+    padding: 25px 200px 25px 200px;
+  }
+  @media (max-width: 920px) {
+    padding: 25px 170px 25px 170px;
+  }
+  @media (max-width: 700px) {
+    padding: 25px 150px 25px 150px;
+  }
+  @media (max-width: 600px) {
+    padding: 25px 140px 25px 140px;
+  }
+  @media (max-width: 500px) {
+    padding: 25px 70px 25px 70px;
+  }
+  @media (max-width: 420px) {
+    padding: 25px 90px 25px 90px;
+  }
+  @media (max-width: 400px) {
+    padding: 25px 80px 25px 80px;
+  }
+  @media (max-width: 360px) {
+    padding: 25px 65px 25px 65px;
+  }
+  @media (max-width: 320px) {
+    padding: 25px 50px 25px 50px;
+  }
+  @media (max-width: 310px) {
+    padding: 25px 45px 25px 45px;
+  }
 `;
 
 export const DivAllEpisodesFav = styled.div`

@@ -47,6 +47,10 @@ export const DivCharacter = styled.div`
     width: 280px;
     //height: 300px;
   }
+  @media (max-width: 400px) {
+    width: 240px;
+    //height: 300px;
+  }
 `;
 
 export const ImgCharacter = styled.div`
@@ -94,14 +98,14 @@ export const InfoChar = styled.div`
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px #2bd326;
+    @media (max-width: 852px) {
+      font-size: 25px;
+    }
     @media (max-width: 480px) {
       font-size: 20px;
     }
     @media (max-width: 430px) {
       font-size: 17px;
-    }
-    @media (max-width: 852px) {
-      font-size: 25px;
     }
   }
   .char-specie {
@@ -110,14 +114,14 @@ export const InfoChar = styled.div`
     font-family: "Creepster", system-ui;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px #2bd326;
+    @media (max-width: 852px) {
+      font-size: 25px;
+    }
     @media (max-width: 480px) {
       font-size: 20px;
     }
     @media (max-width: 430px) {
       font-size: 17px;
-    }
-    @media (max-width: 852px) {
-      font-size: 25px;
     }
   }
 `;

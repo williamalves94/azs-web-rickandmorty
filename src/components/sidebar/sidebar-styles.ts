@@ -10,10 +10,9 @@ export const SidebarDiv = styled.div`
   //left: 100px;
   width: 270px;
   height: 920px;
-  right: ${(props) => (props.sidebar ? "0" : "100%")};
+  right: 0px;
   animation: showSidebar 0.5s;
   border-left: 2px solid #25d61f;
-  //border-bottom: 2px solid #25d61f;
   padding: 0 20px 0 20px;
   font-size: 40px;
   box-shadow: 0px 12px 20px 0px #00000086;
@@ -27,6 +26,15 @@ export const SidebarDiv = styled.div`
       width: 270px;
     }
   }
+  @media (max-width: 1000px) {
+    right: -40px;
+  }
+  @media (max-width: 1000px) {
+    right: -70px;
+  }
+  @media (max-width: 500px) {
+    right: -100px;
+  }
 `;
 
 export const CloseButtonSidebar = styled.div`
@@ -34,6 +42,17 @@ export const CloseButtonSidebar = styled.div`
   font-family: "Creepster", system-ui;
   text-shadow: 1px 1px 2px black;
   margin: 10px 0 40px 220px;
+  @media (max-width: 1000px) {
+    margin: 10px 100px 40px 145px;
+  }
+  @media (max-width: 600px) {
+    font-size: 26px;
+    margin: 10px 100px 40px 147px;
+  }
+  @media (max-width: 500px) {
+    font-size: 26px;
+    margin: 10px 100px 40px 120px;
+  }
 `;
 
 export const Nav = styled.header`
@@ -67,6 +86,9 @@ export const Nav = styled.header`
     @media (max-width: 600px) {
       font-size: 25px;
     }
+    @media (max-width: 500px) {
+      font-size: 20px;
+    }
   }
   .tag-nav-ep {
     //border: 2px solid #fff;
@@ -81,6 +103,9 @@ export const Nav = styled.header`
     }
     @media (max-width: 600px) {
       font-size: 25px;
+    }
+    @media (max-width: 500px) {
+      font-size: 20px;
     }
   }
 

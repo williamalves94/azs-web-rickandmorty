@@ -20,6 +20,7 @@ export const Cards = styled.div`
     border-radius: 6px;
     box-shadow: 10px 10px 15px 0px #00000086;
     margin-bottom: 10px;
+    height: 100%;
   }
 
   .char-image {

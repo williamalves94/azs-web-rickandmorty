@@ -54,9 +54,10 @@ export const DivCharacter = styled.div`
 `;
 
 export const ImgCharacter = styled.div`
+  height: 100%;
   img {
     width: 380px;
-    height: 100%;
+
     border-radius: 8px 0 0 8px;
     @media (max-width: 500px) {
       width: 100%;
